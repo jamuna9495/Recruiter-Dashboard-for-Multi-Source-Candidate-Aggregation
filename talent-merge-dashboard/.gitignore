@@ -1,0 +1,25 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDE / Editor Folders
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Temporary Files
+*.log
+npm-debug.log*
+
+# Node Modules (In case you use them later)
+node_modules/
+
+# Production Build (If you use a bundler)
+dist/
+build/
+
+# Local Environment Secrets (Very important for professional work)
+.env
+.env.local
