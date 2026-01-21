@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentStream AI | Enterprise Recruiter Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <nav class="side-nav">
+            <div class="brand">
+                <div class="logo-icon">TS</div>
+                <span>TalentStream</span>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><i class="fas fa-home"></i> Overview</li>
+                <li><i class="fas fa-user-friends"></i> All Candidates</li>
+                <li><i class="fas fa-exclamation-circle"></i> Conflicts <span class="badge" id="conflictCount">0</span></li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </nav>
+
+        <main class="workspace">
+            <header class="top-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by name, skill, or email...">
+                </div>
+                <div class="user-profile">
+                    <button id="syncBtn" class="sync-action-btn"><i class="fas fa-sync-alt"></i> Run Smart Sync</button>
+                </div>
+            </header>
+
+            <section class="analytics">
+                <div class="chart-container">
+                    <canvas id="sourceChart"></canvas>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <p>Total Profiles</p>
+                        <h2 id="totalProfiles">0</h2>
+                    </div>
+                    <div class="metric-card warning">
+                        <p>Conflicts Found</p>
+                        <h2 id="conflictMetric">0</h2>
+                    </div>
+                </div>
+            </section>
+
+            <div class="filter-bar">
+                <select id="roleFilter">
+                    <option value="all">All Roles</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="UI/UX">UI/UX</option>
+                </select>
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">LinkedIn</button>
+                <button class="filter-btn">Internal ATS</button>
+            </div>
+
+            <div id="candidateGrid" class="grid-layout">
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
